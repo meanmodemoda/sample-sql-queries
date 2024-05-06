@@ -1,1 +1,1 @@
-In these sample queries, I showcase my abilities to write complex sql queries such as complex joins, ctes, window functions, and conditional statements etc.
+In these sample queries, I showcase my abilities to write advanced sql queries such as complex joins, self joins, ctes, window functions etc.
