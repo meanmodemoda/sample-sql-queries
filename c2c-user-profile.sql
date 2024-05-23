@@ -103,11 +103,29 @@ FROM c2c_users
 
 6. Correlation between followers and sell-through (further drill down by gender)
 
+See Tableau
+
 7. Correlation between products wished and products bought (further drill down by gender)
+
+See Tableau
 
 8. Correlation between sell-through and passrate.
 
+See Tableau
+
 9. Cluster Analysis of highly engaged users to luggards.
 
-10. Active users by last login. 
+See Tableau
 
+10. Active users by last login. 
+Users are mostly inactive
+
+SELECT 
+CASE WHEN dayssincelastlogin <=30 THEN 'active in a month'
+WHEN dayssincelastlogin <=360 THEN 'active in a year'
+ELSE 'inactive'
+END as active_status, 
+COUNT(DISTINCT id)/SUM(count(DISTINCT id)) OVER() AS pct_total
+FROM c2c_users
+GROUP BY 1
+ORDER BY pct_total DESC
